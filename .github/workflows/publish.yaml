@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - nexus
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install build & twine
+        run:
+          pip install --upgrade build twine
+
+      - name: Build package
+        run: |
+          python -m build
+
+      - name: List build output
+        run: |
+          ls -la
+          ls -ls dist
