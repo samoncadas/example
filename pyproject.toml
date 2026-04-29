@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools.build_meta"]
+
+[project]
+name = "milib-ejemplo"
+version = "0.0.1"
+description = "Una libreria de prueba para nexus"
+authors = [{ name = "Samuel", email = "samumoncada225@gmail.com"}]
+requires-python = ">3.6"
+dependencies = []
